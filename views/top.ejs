@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <h1>ToDoリスト</h1>
+        <title><%= title %></title>
+        <div class="botan">
+            <a href="/index">
+                <button class="inBotan" type="submit">やることを追加する</button>
+            </a>
+        </div>
+        <ul>
+            <% todoList.forEach(function(todoItem){ %>
+                <div class="todolists">
+                    <li class="oneTodolist">
+                        <hr class="hr" width="10%" >
+                        <div class="b">
+                            <div class="a">
+                                <p>完了チェック</p>
+                                <input id="checkbox" type="checkbox" style="transform:scale(3.0);">
+                            </div>
+                            <div class="a">
+                                <p>やること</p>
+                                <p class="todolist-todo"><%= todoItem.todo %></p>
+                            </div>
+                            <div class="a">
+                                <p>期限</p>
+                                <p class="todolist-date"><%= todoItem.date %></p>
+                            </div>
+                            <div class="a">
+                                <p>完了予定</p>
+                                <p class="todolist-sche"><%= todoItem.sche %></p>
+                            </div>
+                            <div class="a">
+                                <p>進捗率</p>
+                                <p class="todolist-rate"><%= todoItem.rate %>％</p>
+                            </div>
+                            <div class="a">
+                                <p>優先度</p>
+                                <p class="todolist-prio"><%= todoItem.prio %></p> 
+                            </div>
+                        </div>
+                        <div class="botan">
+                            <form action="/delete" method="post" class="topBotan">
+                                <input name="deleteId" type="hidden" value="<%= todoItem.id %>">
+                                <button type="submit" class="submit">削除する</button>
+                            </form>
+                            <form action="/edit" method="post" class="topBotan">
+                                <input name="editId" type="hidden" value="<%= todoItem.id %>">
+                                <button type="submit" class="submit">編集する</button>
+                            </form>
+                        </div>
+                    </li>
+                </div> <!--todolists -->
+            <% }); %>
+        </ul>
+    </body>
+</html>

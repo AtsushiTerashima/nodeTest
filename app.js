@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let dayjs = require('dayjs');
 
-
 var indexRouter = require('./routes/index');
 let topRouter = require('./routes/top');
 let deleteRouter = require('./routes/delete');

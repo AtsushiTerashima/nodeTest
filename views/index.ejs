@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <h1>ToDoを追加する</h1>
+        <div class="input-area">
+            <div class="input">
+                <form action="/index" method="post" class="board-form">
+                    <div class="botan">
+                        <div id="tourokubotan" class="editBotan">
+                            <form action="/index" method="post" class="board-form">
+                                <button type="submit" class="submit">やることを追加</button>
+                                <a href="/">
+                                    <button id="return">ToDo一覧に戻る</button>
+                                </a>
+                            </form>
+                        </div>
+                        <p>やること</p>
+                            <input id="todo" type="text" name="todo" placeholder="やることを入力">
+                        <p>期限</p>
+                            <input id="date" type="date" name="date" placeholder="期限を選択">
+                        <p>完了予定</p>
+                            <input id="sche" type="date" name="sche" placeholder="完了予定日を選択">
+                        <p>進捗率(%)</p>
+                            <select id="rate" name="rate" >
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                                <option value="40">40%</option>
+                                <option value="50">50%</option>
+                                <option value="60">60%</option>
+                                <option value="70">70%</option>
+                                <option value="80">80%</option>
+                                <option value="90">90%</option>
+                                <option value="100">100%</option>
+                            </select>
+                        <p>優先度</p>
+                            <select id="prio" name="prio" >
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                    </div><!--botan-->
+                </form>
+            </div><!--input-->
+        </div><!--input-area-->
+    </body>
+</html>
